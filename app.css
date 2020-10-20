@@ -134,7 +134,7 @@ h1 {
     margin: 0 20px 0 20px;
 }
 
-.search button {
+.search #bouton {
     width: 100px;
     height: 40px;
     border: none;
@@ -142,6 +142,7 @@ h1 {
     background-color: #5965df;
     color: #fff;
     font-weight: bold;
+    cursor: pointer;
 }
 
 
@@ -150,7 +151,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 25px;
+    margin: 25px 0 50px 0;
 }
 
 .job-card {
@@ -216,6 +217,10 @@ section {
     font-size: 19px;
     font-weight: 700;
     color: #1b2029;
+
+    width: 300px;
+    height: 25px;
+    overflow: hidden;
 }
 
 .job-entreprise {
