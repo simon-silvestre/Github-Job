@@ -1,9 +1,13 @@
 let param = '';
+let inputSearch;
+let inputLocalisation;
+let fullTime = 'off';
 
 function getJob(param) {
-    fetch(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?${param}`)
+    fetch(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?${param}&full_time=${fullTime}`)
     .then((response) => response.json())
     .then((data) => {
+        document.querySelector('section').innerHTML = '';
         for(let job of data) {
             addDataToDOM(job);
         };
@@ -28,11 +32,36 @@ function addDataToDOM(job) {
         document.querySelector('section').append(jobCard);
 }
 
-getJob();
 
 document.getElementById('bouton').addEventListener('click', (e) => {
     e.preventDefault();
-    document.querySelector('section').innerHTML = '';
-    param = "location=" + document.getElementById('inputLocalisation').value ;
+    if(document.getElementById('inputTitle').value != ''){
+        inputSearch = "search=" + document.getElementById('inputTitle').value;
+        param = inputSearch;
+    } 
+    else if(document.getElementById('inputLocalisation').value != ''){
+        inputLocalisation = "location=" + document.getElementById('inputLocalisation').value;
+        param = inputLocalisation;
+    }
+    else if (document.getElementById('inputTime').checked == true) {
+        fullTime = 'on';
+    }
+    else if(document.getElementById('inputTitle').value == true && document.getElementById('inputLocalisation').value == true) {
+        param = inputSearch + "&" + inputLocalisation;
+    }
     getJob(param);
+    param = '';
+    fullTime = 'off';
 })
+
+getJob();
+
+
+window.matchMedia("(max-width: 675px)").addEventListener('change', () => {
+    if (window.matchMedia("(max-width: 675px)").matches) {
+        document.querySelector('.search p').textContent= "Full Time";
+    }
+    else {
+        document.querySelector('.search p').textContent= "Full Time Only";
+    }
+});

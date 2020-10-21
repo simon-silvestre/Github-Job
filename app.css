@@ -12,15 +12,15 @@ body {
 
 header {
     width: 100%;
-    height: 180px;
+    height: 160px;
     position: relative;
 }
 
 .header-background {
-    width: 99%;
+    width: 100%;
     height: 78%;
     background-color:#5965df;
-    border-radius: 0 0 0 100px;
+    border-radius: 0 0 0 80px;
     top: 0;
     right: 0;
     position: absolute;
@@ -30,7 +30,7 @@ h1 {
     color: #fff;
     position: absolute;
     top: 30px;
-    left: 12%;
+    left: 9.5%;
 }
 
 .header-filter {
@@ -38,10 +38,21 @@ h1 {
     top: 63%;
 
     display: flex;
-    justify-content: center;
+    justify-content: center;    
+}
 
-    margin: 0px 40px 0px 40px;
-    
+.header-filter form {
+    display: flex;
+    width: 82%;
+}
+
+form .input-container:nth-child(1) {
+    width: 45%;
+}
+
+form .input-container:nth-child(2) {
+    width: 25%;
+    min-width: 160px;
 }
 
 .input-container {
@@ -49,7 +60,6 @@ h1 {
     align-items: center;
     position: relative;
     min-width: 90px;
-    width: 400px;
     height: 60px;
 }
 
@@ -63,14 +73,13 @@ h1 {
 .input-container input {
     border: none;
     border-right: 1px solid lightgray;
-    color: #b1b2b4;
     padding-left: 50px;
 }
 
 .input-container #inputTitle {
     width: 100%;
     height: 100%;
-    border-radius: 6px 0 0 6px;
+    border-radius: 4px 0 0 4px;
 }
 
 .input-container #inputLocalisation {
@@ -89,18 +98,18 @@ h1 {
     align-items: center;
     justify-content: center;
 
-    width: 20%;
-    min-width: 250px;
+    width: 30%;
+    min-width: 190px;
     height: 60px;
     border: none;
     background-color: #fff;
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 4px 4px 0;
     padding: 0 10px 0 10px;
 }
 
 .checkmark {
    position: relative;
-    width: 20px;
+    min-width: 20px;
     height: 20px;
     background: #e8e8ea;
     border-radius: 2px;
@@ -131,18 +140,21 @@ h1 {
 .search p {
     font-weight: bold;
     font-size: 13px;
-    margin: 0 20px 0 20px;
+    margin: 0 10px 0 10px;
+    width: 160px;
+    text-align: center;
 }
 
 .search #bouton {
     width: 100px;
     height: 40px;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     background-color: #5965df;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
+    font-size: 11px;
 }
 
 
@@ -237,6 +249,103 @@ section {
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1200px) {
+    .job-card {
+        width: 240px;
+        height: 140px;
+    }
 
+    .job-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .job-hours, .job-entreprise {
+        font-size: 12px;
+    }
+
+    .job-name {
+        width: 250px;
+        height: 20px;
+        font-size: 16px;
+    }
+
+    .job-location {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 589px) and (max-width: 675px) {
+
+    .job-card {
+        width: 197px;
+        height: 120px;
+    }
+
+    .job-img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .job-hours, .job-entreprise {
+        font-size: 10px;
+    }
+
+    .job-name {
+        width: 205px;
+        height: 18px;
+        font-size: 14px;
+    }
+
+    .job-location {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 675px) {
+
+    .header-filter form {
+        width: 90%;
+    }
+
+    .search {
+        min-width: 170px;
+    }
+
+    .search p {
+        margin: 0;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+
+   form .input-container:nth-child(2), .search {
+       display: none;
+   }
+
+   .header-filter form {
+       justify-content: center;
+   }
+
+   form .input-container {
+    width: 90%!important;
+   }
+
+   form input {
+    border-radius: 4px!important;
+    border: none!important;
+   }
+}
+
+
+@media screen and (max-width: 415px) {
+
+    .input-container svg {
+        display: none;
+    }
+
+    .input-container input {
+        padding-left: 25px;
+    }
 }
