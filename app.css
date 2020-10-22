@@ -76,6 +76,10 @@ form .input-container:nth-child(2) {
     padding-left: 50px;
 }
 
+#boutonResponsive {
+    display: none;
+}
+
 .input-container #inputTitle {
     width: 100%;
     height: 100%;
@@ -320,6 +324,22 @@ section {
 
 @media screen and (max-width: 550px) {
 
+    section {
+        margin: 0 0 25px 0;
+    }
+
+    .header-background {
+        border-radius: 0;
+    }
+
+    .input-container {
+        height: 70px;
+    }
+
+    .header-filter {
+        top: 58%;
+    }
+
    form .input-container:nth-child(2), .search {
        display: none;
    }
@@ -329,23 +349,54 @@ section {
    }
 
    form .input-container {
-    width: 90%!important;
+    width: 100%!important;
    }
 
    form input {
     border-radius: 4px!important;
     border: none!important;
    }
+
+   .input-container svg {
+        display: none;
+    }
+
+    .input-container input {
+     padding-left: 25px;
+    }
+
+    #boutonResponsive svg {
+        display: block;
+        color: #fff;
+        margin: 0;
+    }
+
+   #boutonResponsive {
+        display: block;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+
+        right: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #5966de;
+        border-radius: 4px;
+
+        cursor: pointer;
+    }
+
+    #boutonResponsive:active {
+        transform: scale(1.05);
+        transition: all 0.1s;
+    }
 }
 
 
 @media screen and (max-width: 415px) {
 
-    .input-container svg {
-        display: none;
-    }
 
-    .input-container input {
-        padding-left: 25px;
-    }
 }
