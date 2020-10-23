@@ -287,7 +287,7 @@ section {
 .description-poste-container {
     position: relative;
     width: 675px;
-    top: 45%;
+    top: 55%;
     display: none;
     flex-direction: column;
     justify-content: center;

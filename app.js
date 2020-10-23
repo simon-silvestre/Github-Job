@@ -37,7 +37,7 @@ function addDataToDOM(job) {
         document.querySelector('section').append(jobCard);
 
         jobCard.addEventListener('click', () => {
-            addDescriptionToDOM(job);
+            addDescriptionToDOM(job, timeago);
             document.querySelector('.header-filter').style.display = "none";
             document.querySelector('section').style.display = "none";
             document.querySelector('.voir-plus-container').style.display = "none";
@@ -45,7 +45,7 @@ function addDataToDOM(job) {
         })
 }
 
-function addDescriptionToDOM(job) {
+function addDescriptionToDOM(job, timeago) {
 
     let description = document.querySelector('.description-poste-container').innerHTML = `
         <div class="description-title-container">
@@ -57,13 +57,12 @@ function addDescriptionToDOM(job) {
                     <p class="description-title-company">${job.company}</p>
                     <small>${job.company_url}</small>
                 </div>
-                    <a href="">Company Site</a>
+                    <a href="${job.company_url}">Company Site</a>
                 </div>
             </div>
             <div class="description-poste">
                 ${job.description}
             </div>
-        </div>
     `
 }
 
