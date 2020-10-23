@@ -14,6 +14,9 @@ header {
     width: 100%;
     height: 160px;
     position: relative;
+
+    display: flex;
+    justify-content: center;
 }
 
 .header-background {
@@ -38,7 +41,8 @@ h1 {
     top: 63%;
 
     display: flex;
-    justify-content: center;    
+    justify-content: center;  
+    width: 100%;  
 }
 
 .header-filter form {
@@ -180,9 +184,6 @@ section {
 
 .job-card {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     width: 280px;
     height: 160px;
 
@@ -282,6 +283,80 @@ section {
     color: #ffF;
     cursor: pointer;
 }
+
+.description-poste-container {
+    position: relative;
+    width: 675px;
+    top: 45%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 20px 0 20px;
+}
+
+.description-title-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 110px;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.description-title-image {
+    display: flex;
+    align-items: center;
+    width: 147px;
+    height: 110px;
+    background-color: #fff;
+}
+
+.description-title-image img {
+    width: 100%;
+}
+
+.description-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.description-title-company {
+    font-size: 19px;
+    font-weight: 600;
+    color: #1b2029;
+    margin-bottom: 4px;
+    max-width: 330px;
+    overflow: hidden;
+}
+
+.description-title small {
+    color:  #98a1ad;
+}
+
+.description-title a {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #efeff8;
+    color: #5965df;
+}
+
+.description-poste {
+    max-width: 100%;
+    background-color: #fff;
+    padding: 45px;
+    border-radius: 4px;
+}
+
 
 @media screen and (max-width: 1200px) {
     .job-card {

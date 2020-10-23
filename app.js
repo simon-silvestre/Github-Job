@@ -35,6 +35,36 @@ function addDataToDOM(job) {
             <small class="job-location">${job.location}</small>
             `
         document.querySelector('section').append(jobCard);
+
+        jobCard.addEventListener('click', () => {
+            addDescriptionToDOM(job);
+            document.querySelector('.header-filter').style.display = "none";
+            document.querySelector('section').style.display = "none";
+            document.querySelector('.voir-plus-container').style.display = "none";
+            document.querySelector('.description-poste-container').style.display = "block";
+        })
+}
+
+function addDescriptionToDOM(job) {
+
+    let description = document.querySelector('.description-poste-container').innerHTML = `
+        <div class="description-title-container">
+            <div class="description-title-image">
+                <img src="${job.company_logo}" alt="">
+            </div>    
+            <div class="description-title">
+                <div>
+                    <p class="description-title-company">${job.company}</p>
+                    <small>${job.company_url}</small>
+                </div>
+                    <a href="">Company Site</a>
+                </div>
+            </div>
+            <div class="description-poste">
+                ${job.description}
+            </div>
+        </div>
+    `
 }
 
 function timeAgo(job) {
