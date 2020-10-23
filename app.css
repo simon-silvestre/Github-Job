@@ -76,6 +76,10 @@ form .input-container:nth-child(2) {
     padding-left: 50px;
 }
 
+input:focus {
+    outline: none;
+}
+
 #boutonResponsive {
     display: none;
 }
@@ -197,10 +201,11 @@ section {
     height: 50px;
     border-radius: 10px;
     overflow: hidden;
+    background-color: #fff;
 }
 
 .job-img img {
-    width: 110%;
+    width: 100%;
 }
 
 .job-hours {
@@ -240,7 +245,7 @@ section {
 }
 
 .job-entreprise {
-    top: 115px;
+    top: 110px;
 }
 
 .job-location {
@@ -252,6 +257,27 @@ section {
     color: #5965df;
 }
 
+
+.voir-plus-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.voir-plus-container a {
+    width: 110px;
+    height: 40px;
+    background-color: #5965df;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffF;
+    cursor: pointer;
+}
 
 @media screen and (max-width: 1200px) {
     .job-card {
@@ -265,7 +291,7 @@ section {
     }
 
     .job-hours, .job-entreprise {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .job-name {
@@ -275,7 +301,7 @@ section {
     }
 
     .job-location {
-        font-size: 10px;
+        font-size: 11px;
     }
 }
 
@@ -332,8 +358,8 @@ section {
         border-radius: 0;
     }
 
-    .input-container {
-        height: 70px;
+    .input-container input::placeholder {
+        font-size: 12px;
     }
 
     .header-filter {
@@ -355,6 +381,7 @@ section {
    form input {
     border-radius: 4px!important;
     border: none!important;
+    font-size: 12px;
    }
 
    .input-container svg {
@@ -376,7 +403,6 @@ section {
         position: absolute;
         width: 40px;
         height: 40px;
-
         right: 10px;
 
         display: flex;
