@@ -6,6 +6,7 @@ let description;
 let locations;
 let dateActuelle = new Date();
 let index = 2;
+let filterHamburger = document.querySelector('.input-container svg:nth-child(3)');
 
 function getJob(param) {
     fetch(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?${param}`)
@@ -114,6 +115,21 @@ document.querySelector('.voir-plus-container a').addEventListener('click', () =>
     page = param + "&page=" + index;
     getJob(page);
     index++;
+})
+
+filterHamburger.addEventListener('click', () => {
+    let inputContainer = document.querySelector('form .input-container:nth-child(2)');
+    let inputSearch = document.querySelector('.search');
+    if (inputContainer.style.display === "none") {
+        inputContainer.style.display = "flex";
+        inputSearch.style.display = "flex";
+        document.querySelector('section').style.marginTop = "120px";
+    }
+    else {
+        inputContainer.style.display = "none";
+        inputSearch.style.display = "none";
+        document.querySelector('section').style.marginTop = "0";
+    }
 })
 
 window.matchMedia("(max-width: 675px)").addEventListener('change', () => {
