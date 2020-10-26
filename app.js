@@ -34,14 +34,15 @@ function addDataToDOM(job) {
             <p class="job-entreprise">${job.company}</p>
             <small class="job-location">${job.location}</small>
             `
-        document.querySelector('section').append(jobCard);
+        document.querySelector('.job-card-container').append(jobCard);
 
         jobCard.addEventListener('click', () => {
             addDescriptionToDOM(job, timeago);
             document.querySelector('.header-filter').style.display = "none";
-            document.querySelector('section').style.display = "none";
+            document.querySelector('.job-card-container').style.display = "none";
             document.querySelector('.voir-plus-container').style.display = "none";
-            document.querySelector('.description-poste-container').style.display = "block";
+            document.querySelector('.description-poste-container').style.display = "flex";
+            document.querySelector('.header-background svg').style.display = "block";
         })
 }
 
@@ -169,6 +170,14 @@ filterHamburger.addEventListener('click', () => {
         inputSearch.style.display = "none";
         document.querySelector('section').style.marginTop = "0";
     }
+})
+
+document.querySelector('.header-background svg').addEventListener('click', () => {
+    document.querySelector('.description-poste-container').style.display = "none";
+    document.querySelector('.header-filter').style.display = "flex";
+    document.querySelector('.job-card-container').style.display = "flex";
+    document.querySelector('.voir-plus-container').style.display = "flex";
+    document.querySelector('.header-background svg').style.display = "none";
 })
 
 window.matchMedia("(max-width: 675px)").addEventListener('change', () => {

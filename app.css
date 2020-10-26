@@ -29,6 +29,16 @@ header {
     position: absolute;
 }
 
+.header-background svg {
+
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 25px;
+    color: #fff;
+    display: none;
+}
+
 h1 {
     color: #fff;
     position: absolute;
@@ -183,6 +193,13 @@ section {
     margin: 25px 0 50px 0;
 }
 
+.job-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 0 50px 0;
+}
+
 .job-card {
     position: relative;
     width: 280px;
@@ -285,13 +302,12 @@ section {
 }
 
 .description-poste-container {
-    position: relative;
     width: 675px;
-    top: 55%;
     display: none;
     flex-direction: column;
     justify-content: center;
-    margin: 0 20px 0 20px;
+    margin: -85px 20px 0 20px;
+    z-index: 10;
 }
 
 .description-title-container {
@@ -308,8 +324,7 @@ section {
 .description-title-image {
     display: flex;
     align-items: center;
-    width: 147px;
-    height: 110px;
+    width: 22%;
     background-color: #fff;
 }
 
@@ -321,6 +336,7 @@ section {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 30px;
 }
 
@@ -339,12 +355,14 @@ section {
 
 .description-title a {
     display: flex;
+    justify-content: center;
     align-items: center;
 
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
-    padding: 10px 20px;
+    width: 135px;
+    height: 42px;
     border-radius: 4px;
     background-color: #efeff8;
     color: #5965df;
@@ -437,6 +455,11 @@ section {
     .job-location {
         font-size: 11px;
     }
+
+    .description-title-company {
+        font-size: 16px;
+        margin-right: 50px;
+    }
 }
 
 @media screen and (min-width: 589px) and (max-width: 675px) {
@@ -446,22 +469,22 @@ section {
         height: 120px;
     }
 
-    .job-img {
+    .job-card .job-img {
         width: 35px;
         height: 35px;
     }
 
-    .job-hours, .job-entreprise {
+    .job-card .job-hours, .job-card .job-entreprise {
         font-size: 10px;
     }
 
-    .job-name {
+    .job-card .job-name {
         width: 205px;
         height: 18px;
         font-size: 14px;
     }
 
-    .job-location {
+    .job-card .job-location {
         font-size: 8px;
     }
 }
@@ -572,10 +595,57 @@ section {
         transform: scale(1.05);
         transition: all 0.1s;
     }
+
+    .description-poste-container {
+        margin: -65px 20px 0 20px;
+    }
+
+    .description-title-container {
+        height: auto;
+    }
+
+    .description-title-image {
+        width: 46%;
+    }
+
+    .description-title {
+        flex-direction: column;
+    }
+
+    .description-title-company {
+        margin-right: 0;
+    }
+
+    .description-title a {
+        margin: 15px 0 22px 0;
+    }
+
+    .poste-infos #applyButton {
+        position: initial;
+        margin-top: 20px;
+    }
 }
 
 
 @media screen and (max-width: 415px) {
 
+    .description-title-container {
+        flex-direction: column;
+    }
 
+    .description-title-image {
+        width: 30%;
+    }
+
+    .description-title {
+        margin-top: 20px;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    .description-poste-container {
+        width: 300px;
+    }
 }
