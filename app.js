@@ -61,6 +61,16 @@ function addDescriptionToDOM(job, timeago) {
                 </div>
             </div>
             <div class="description-poste">
+                <div class="poste-infos">
+                    <div class="job-hours">
+                        <p class="job-date">${timeago}</p>
+                        <span class="separateur"></span>
+                        <p class="job-type">${job.type}</p>
+                    </div>
+                    <p class="job-name">${job.title}</p>
+                    <small class="job-location">${job.location}</small>
+                    <a href="" id="applyButton">Postuler</a>
+                </div>
                 ${job.description}
             </div>
     `

@@ -43,6 +43,7 @@ h1 {
     display: flex;
     justify-content: center;  
     width: 100%;  
+    height: fit-content;
 }
 
 .header-filter form {
@@ -219,7 +220,6 @@ section {
     align-items: center;
 
     top: 50px;
-
 }
 
 .job-hours, .job-entreprise {
@@ -353,8 +353,63 @@ section {
 .description-poste {
     max-width: 100%;
     background-color: #fff;
-    padding: 45px;
+    padding: 45px 45px 4px 45px;
     border-radius: 4px;
+    font-size: 14px;
+    color: #8c8f9a;
+}
+
+.description-poste a {
+    color: #5965df;
+    font-weight: bold;
+}
+
+.description-poste p, .description-poste ul, .description-poste h2 {
+    margin-bottom: 25px;
+    line-height: 25px;
+}
+
+
+.description-poste li {
+    margin-bottom: 10px;
+}
+
+
+.description-poste p strong, .description-poste h2 {
+    font-size: 16px;
+    color: #000;
+}
+
+.poste-infos {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.poste-infos p {
+    margin: 0;
+}
+
+.poste-infos .job-hours, .poste-infos .job-name, .poste-infos .job-location  {
+    position: initial;
+    margin: 10px 0 5px ;
+}
+
+.poste-infos #applyButton {
+    position: absolute;
+    top: 15px;
+    right: 0px;
+    width: 110px;
+    height: 40px;
+    background-color: #5965df;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffF;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 
